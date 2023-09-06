@@ -15,5 +15,6 @@ int main(int ac, char **argv, char **env)
 	printf("%s", prompt);
 	getline(&command, &len, stdin);
 	printf("%s", command);
+
 	return (0);
 }
