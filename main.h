@@ -1,14 +1,20 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include <stdio.h>
-#include <stdlib.h>
+/* HEADER FILES */
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/wait.h>
 
+/* MACROS */
+#define TRUE 1
+#define FALSE 0
+#define AND &&
+#define OR ||
+
+/* TYPE DEFS */
 typedef char *string;
 
 int printChar(char c);
