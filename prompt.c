@@ -6,10 +6,10 @@ ssize_t prompt(char **command)
 	size_t len = 0;
 
 	if(isatty(0))
-		printf("(Eshell) $ ");
+		printf("$ ");
 	n = getline(command, &len, stdin);
 
-	if (n == -1)
+	if (n EQUALS -1)
 	{
 		return (-1);
 	}

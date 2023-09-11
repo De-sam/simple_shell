@@ -10,15 +10,15 @@ int main(int argc, char **argv)
 
 	(void)argc;
 
-	while (1)
+	while (TRUE)
 	{
 		nchar = prompt(&command);
-		if(nchar == -1)
+		if(nchar EQUALS -1)
 			return (-1);
 
 		command_copy = strdup(command);
 		token = tokenize(command, delim);
-		while (token != NULL)
+		while (token NEQUAL NULL)
 		{
 			num_token++;
 			token = tokenize(NULL, delim);
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		argv = malloc(sizeof(char *) * num_token);
 		token = tokenize(command_copy, delim);
 
-		for (i = 0; token != NULL; i++)
+		for (i = 0; token NEQUAL NULL; i++)
 		{
 			argv[i] = malloc(sizeof(char) * sizeof(token));
 			strcpy(argv[i], token);

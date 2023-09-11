@@ -7,12 +7,10 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <sys/wait.h>
-
-/* MACROS */
-#define TRUE 1
-#define FALSE 0
-#define AND &&
-#define OR ||
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
 
 /* TYPE DEFS */
 typedef char *string;
@@ -25,5 +23,17 @@ string get_location_new(string command);
 __ssize_t _getline(char **command, size_t *len, FILE *stream);
 char *tokenize(char *str, const char *delim);
 ssize_t prompt(char **command);
+
+/* MACROS */
+#define TRUE 1
+#define FALSE 0
+#define AND &&
+#define OR ||
+#define NOT !
+#define EQUALS ==
+#define NEQUAL !=
+#define GT >
+#define LT <
+
 
 #endif

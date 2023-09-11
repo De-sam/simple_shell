@@ -1,40 +1,38 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
+#include "main.h"
 
 char *tokenize(char *str, const char *delim)
 {
 	static char *lastToken = NULL;
 	char *token;
 
-	if (str != NULL)
+	if (str NEQUAL NULL)
 	{
 		lastToken = str;
 	}
 
-	if (lastToken == NULL || *lastToken == '\0')
+	if (lastToken EQUALS NULL OR *lastToken EQUALS '\0')
 	{
 		return NULL;
 	}
 
-	while (*lastToken != '\0' && strchr(delim, *lastToken) != NULL)
+	while (*lastToken NEQUAL '\0' AND strchr(delim, *lastToken) NEQUAL NULL)
 	{
 		lastToken++;
 	}
 
-	if (*lastToken == '\0')
+	if (*lastToken EQUALS '\0')
 	{
 		return NULL;
 	}
 
 	token = lastToken;
 
-	while (*lastToken != '\0' && strchr(delim, *lastToken) == NULL)
+	while (*lastToken NEQUAL'\0' AND strchr(delim, *lastToken) EQUALS NULL)
 	{
 		lastToken++;
 	}
 
-	if (*lastToken != '\0')
+	if (*lastToken NEQUAL '\0')
 	{
 		*lastToken = '\0';
 		lastToken++;
