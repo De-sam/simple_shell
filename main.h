@@ -24,6 +24,7 @@ __ssize_t _getline(char **command, size_t *len, FILE *stream);
 char *tokenize(char *str, const char *delim);
 ssize_t prompt(char **command);
 void print_environment(void);
+char **set_args(char *command);
 
 /* MACROS */
 #define TRUE 1
