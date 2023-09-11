@@ -23,6 +23,7 @@ string get_location_new(string command);
 __ssize_t _getline(char **command, size_t *len, FILE *stream);
 char *tokenize(char *str, const char *delim);
 ssize_t prompt(char **command);
+void print_environment(void);
 
 /* MACROS */
 #define TRUE 1

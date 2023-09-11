@@ -13,11 +13,23 @@ int main(int argc, char **argv)
 	while (TRUE)
 	{
 		nchar = prompt(&command);
-		if(nchar EQUALS -1)
-			return (-1);
+		if (nchar EQUALS - 1)
+			exit(EXIT_SUCCESS);
 
 		command_copy = strdup(command);
 		token = tokenize(command, delim);
+		if (strcmp(token, "exit") EQUALS 0)
+		{
+			/* Handle exit command*/
+			free(command_copy);
+			free(command);
+			exit(EXIT_SUCCESS);
+		}
+		else if (strcmp(token, "env") EQUALS 0)
+		{
+			print_environment();
+		}
+
 		while (token NEQUAL NULL)
 		{
 			num_token++;

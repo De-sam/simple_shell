@@ -2,7 +2,7 @@
 
 int printChar(char c)
 {
-	return (write(1, &c, 1));
+	return (write(STDIN_FILENO, &c, 1));
 }
 
 int printString(char *str)
@@ -14,4 +14,15 @@ int printString(char *str)
 	}
 
 	return (count);
+}
+
+void print_environment(void)
+{
+	extern char **environ;
+	int i;
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		printString(environ[i]);
+		printChar('\n');
+	}
 }

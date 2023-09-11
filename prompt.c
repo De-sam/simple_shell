@@ -8,9 +8,10 @@ ssize_t prompt(char **command)
 	if(isatty(0))
 		printf("$ ");
 	n = getline(command, &len, stdin);
-
+	
 	if (n EQUALS -1)
 	{
+		/* Handle EOF command */
 		return (-1);
 	}
 
