@@ -21,7 +21,7 @@ void execmd(char **argv)
 			{
 				execve(actual_command, argv, NULL);
 				perror("Error");
-				exit(1);
+				exit(EXIT_FAILURE);
 			}
 			else if (child_pid GT 0)
 			{
