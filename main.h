@@ -15,6 +15,7 @@
 /* TYPE DEFS */
 typedef char *string;
 
+/*FUNCTION PROTOTYPES*/
 int printChar(char c);
 int printString(char *str);
 void execmd(char **argv);
@@ -25,7 +26,7 @@ char *tokenize(char *str, const char *delim);
 ssize_t prompt(char **command);
 void print_environment(void);
 char **set_args(char *command);
-
+ 
 /* MACROS */
 #define TRUE 1
 #define FALSE 0
@@ -36,6 +37,7 @@ char **set_args(char *command);
 #define NEQUAL !=
 #define GT >
 #define LT <
+
 
 
 #endif
