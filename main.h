@@ -20,22 +20,14 @@ int printString(char *str);
 void execmd(char **argv);
 char *get_location(char *command);
 string get_location_new(string command);
-__ssize_t _getline(char **command, size_t *len, FILE *stream);
+ssize_t _getline(char **command, size_t *len, FILE *stream);
 char *tokenize(char *str, const char *delim);
-ssize_t prompt(char **command);
+void prompt(char **command);
 void print_environment(void);
 char **set_args(char *command);
 
 /* MACROS */
 #define TRUE 1
 #define FALSE 0
-#define AND &&
-#define OR ||
-#define NOT !
-#define EQUALS ==
-#define NEQUAL !=
-#define GT >
-#define LT <
-
 
 #endif

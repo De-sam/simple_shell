@@ -13,7 +13,7 @@ string get_location(string command)
 		command_len = strlen(command);
 		path_token = strtok(path_copy, ":");
 
-		while (path_token NEQUAL NULL)
+		while (path_token != NULL)
 		{
 			directory_len = strlen(path_token);
 			file_path = malloc(command_len + directory_len + 2);
@@ -23,7 +23,7 @@ string get_location(string command)
 			strcat(file_path, command);
 			strcat(file_path, "\0");
 
-			if (stat(file_path, &buffer) EQUALS 0)
+			if (stat(file_path, &buffer) == 0)
 			{
 				free(path_copy);
 				return (file_path);
@@ -36,8 +36,7 @@ string get_location(string command)
 		}
 
 		free(path_copy);
-
-		if (stat(command, &buffer) EQUALS 0)
+		if (stat(command, &buffer) == 0)
 		{
 			return (command);
 		}

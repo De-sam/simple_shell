@@ -5,34 +5,34 @@ char *tokenize(char *str, const char *delim)
 	static char *lastToken = NULL;
 	char *token;
 
-	if (str NEQUAL NULL)
+	if (str != NULL)
 	{
 		lastToken = str;
 	}
 
-	if (lastToken EQUALS NULL OR *lastToken EQUALS '\0')
+	if (lastToken == NULL || *lastToken == '\0')
 	{
 		return NULL;
 	}
 
-	while (*lastToken NEQUAL '\0' AND strchr(delim, *lastToken) NEQUAL NULL)
+	while (*lastToken != '\0' && strchr(delim, *lastToken) != NULL)
 	{
 		lastToken++;
 	}
 
-	if (*lastToken EQUALS '\0')
+	if (*lastToken == '\0')
 	{
 		return NULL;
 	}
 
 	token = lastToken;
 
-	while (*lastToken NEQUAL'\0' AND strchr(delim, *lastToken) EQUALS NULL)
+	while (*lastToken != '\0' && strchr(delim, *lastToken) == NULL)
 	{
 		lastToken++;
 	}
 
-	if (*lastToken NEQUAL '\0')
+	if (*lastToken != '\0')
 	{
 		*lastToken = '\0';
 		lastToken++;

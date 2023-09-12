@@ -10,25 +10,25 @@ void execmd(char **argv)
 		command = argv[0];
 		actual_command = get_location(command);
 
-		if (actual_command EQUALS NULL)
+		if (actual_command == NULL)
 		{
 			perror("Error");
 		}
 		else
 		{
 			child_pid = fork();
-			if (child_pid EQUALS 0)
+			if (child_pid == 0)
 			{
 				execve(actual_command, argv, NULL);
 				perror("Error");
+				free(actual_command);
+				free(command);
+				free(argv);
 				exit(EXIT_FAILURE);
 			}
-			else if (child_pid GT 0)
+			else if (child_pid > 0)
 			{
-				/* Parent process*/
-				/* Wait for the child process to finish*/
 				wait(NULL);
-				free(actual_command);
 			}
 			else
 			{
