@@ -15,6 +15,7 @@
 /* TYPE DEFS */
 typedef char *string;
 
+/*FUNCTION PROTOTYPES*/
 int printChar(char c);
 int printString(char *str);
 void execmd(char **argv);
@@ -25,9 +26,10 @@ char *tokenize(char *str, const char *delim);
 void prompt(char **command);
 void print_environment(void);
 char **set_args(char *command);
-
+ 
 /* MACROS */
 #define TRUE 1
 #define FALSE 0
+
 
 #endif
