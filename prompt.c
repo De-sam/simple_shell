@@ -14,7 +14,7 @@ void prompt(char **command)
 		/* Handle EOF command */
 		free(*command);
 		exit(EXIT_SUCCESS);
-	}
+	}	
 
 	/*Remove newline character*/
 	input_length = strlen(*command);

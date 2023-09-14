@@ -26,7 +26,9 @@ char *tokenize(char *str, const char *delim);
 void prompt(char **command);
 void print_environment(void);
 char **set_args(char *command);
- 
+void set_env_variable(const char *variable, const char *value);
+void unset_env_variable(const char *variable);
+
 /* MACROS */
 #define TRUE 1
 #define FALSE 0

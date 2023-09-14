@@ -11,7 +11,11 @@ char **set_args(char *command)
 	token = tokenize(command, delim);
 	
 	if (strcmp(token, "env") == 0)
+	{
 		print_environment();
+		free(command_copy);
+		return (NULL);
+	}
 
 	while (token != NULL)
 	{
