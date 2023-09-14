@@ -12,6 +12,7 @@ void execmd(char **argv)
 
 		if (actual_command == NULL)
 		{
+			free(actual_command);
 			perror("Error");
 		}
 		else
@@ -29,6 +30,8 @@ void execmd(char **argv)
 			else if (child_pid > 0)
 			{
 				wait(NULL);
+				free(command);
+				free(actual_command);
 			}
 			else
 			{

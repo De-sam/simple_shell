@@ -3,6 +3,7 @@
 int main(int argc, char **argv)
 {
 	string command = NULL;
+	int i;
 	(void)argc;
 
 	while (TRUE)
@@ -12,7 +13,14 @@ int main(int argc, char **argv)
 		execmd(argv);
 	}
 
-	free(argv);
+	if(argv != NULL)
+	{
+		for (i = 0; argv[i] != NULL; i++)
+		{
+			free(argv[i]);
+		}
+		free(argv);
+	}
 	free(command);
 
 	return (0);

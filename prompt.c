@@ -2,9 +2,9 @@
 
 void prompt(char **command)
 {
-	ssize_t n;
+	ssize_t n = 0;
 	size_t len = 0;
-	size_t input_length;
+	size_t input_length = 0;
 
 	if(isatty(0))
 		printf("$ ");

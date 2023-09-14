@@ -12,9 +12,15 @@ char **set_args(char *command)
 	if (strcmp(token, "exit") == 0)
 	{
 		/* Handle exit command*/
+		if(argv != NULL){
+			for (i = 0; argv[i] != NULL; i++)
+			{
+				free(argv[i]);
+			}
+			free(argv);
+		}
 		free(command_copy);
 		free(command);
-		free(argv);
 		exit(EXIT_SUCCESS);
 	}
 	else if (strcmp(token, "env") == 0)
@@ -30,7 +36,7 @@ char **set_args(char *command)
 	token = tokenize(command_copy, delim);
 	for (i = 0; token != NULL; i++)
 	{
-		argv[i] = malloc(sizeof(char) * sizeof(token));
+		argv[i] = malloc(strlen(token) + 1);
 		strcpy(argv[i], token);
 		token = tokenize(NULL, delim);
 	}
