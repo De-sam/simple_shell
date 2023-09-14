@@ -8,6 +8,18 @@ void execmd(char **argv)
 	if (argv)
 	{
 		command = argv[0];
+		if (strcmp(command, "exit") == 0)
+		{
+			int status = 0;
+			if (argv[1] != NULL)
+			{
+				status = atoi(argv[1]);
+			}
+
+			free(command);
+			free(argv);
+			exit(status);
+		}
 		actual_command = get_location(command);
 
 		if (actual_command == NULL)

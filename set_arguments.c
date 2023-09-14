@@ -9,21 +9,8 @@ char **set_args(char *command)
 
 	command_copy = strdup(command);
 	token = tokenize(command, delim);
-	if (strcmp(token, "exit") == 0)
-	{
-		/* Handle exit command*/
-		if(argv != NULL){
-			for (i = 0; argv[i] != NULL; i++)
-			{
-				free(argv[i]);
-			}
-			free(argv);
-		}
-		free(command_copy);
-		free(command);
-		exit(EXIT_SUCCESS);
-	}
-	else if (strcmp(token, "env") == 0)
+	
+	if (strcmp(token, "env") == 0)
 		print_environment();
 
 	while (token != NULL)
