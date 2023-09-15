@@ -16,7 +16,7 @@ void prompt(char **command)
 		exit(EXIT_SUCCESS);
 	}	
 
-	/*Remove newline character*/
+	/* Remove newline character */
 	input_length = strlen(*command);
 	if (input_length > 0 && (*command)[input_length - 1] == '\n')
 	{

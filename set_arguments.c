@@ -14,6 +14,7 @@ char **set_args(char *command)
 	{
 		print_environment();
 		free(command_copy);
+		free(command);
 		return (NULL);
 	}
 

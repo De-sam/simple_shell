@@ -42,7 +42,6 @@ void execmd(char **argv)
 			else if (child_pid > 0)
 			{
 				wait(NULL);
-				free(command);
 				free(actual_command);
 			}
 			else

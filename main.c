@@ -60,18 +60,18 @@ int main(int argc, char **argv)
 				}
 			}
 			else
+			{
 				execmd(argv);
+				if (argv != NULL)
+				{
+					for (i = 0; argv[i] != NULL; i++)
+						free(argv[i]);
+					free(argv);
+				}
+			}
 		}
 	}
-	
 
-	if(argv != NULL)
-	{
-		for (i = 0; argv[i] != NULL; i++)
-			free(argv[i]);
-		free(argv);
-	}
-	if (command != NULL)
-		free(command);
+	free(command);
 	return (0);
 }
