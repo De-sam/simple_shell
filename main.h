@@ -26,7 +26,7 @@ char *get_location(char *command);
 string get_location_new(string command);
 ssize_t _getline(char **command, size_t *len, FILE *stream);
 char *tokenize(char *str, const char *delim);
-void prompt(char **command);
+int prompt(char **command);
 void print_environment(void);
 char **set_args(char *command);
 void set_env_variable(const char *variable, const char *value);

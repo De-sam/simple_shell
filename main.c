@@ -8,20 +8,15 @@ int main(int argc, char **argv)
 
 	while (TRUE)
 	{
-		prompt(&command);
-		if (strcmp(command, "") == 0)
-		{
-			free(command);
+		if (!prompt(&command))
 			continue;
-		}
 		argv = set_args(command);
 		if (argv)
 		{
-			if(cmd_set_unset_env(argv))
+			if (cmd_set_unset_env(argv))
 				continue;
-			if(cmd_change_directory(argv))
+			if (cmd_change_directory(argv))
 				continue;
-			
 			execmd(argv);
 			if (argv != NULL)
 			{
