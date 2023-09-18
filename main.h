@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #define PATH_MAX 4096
+extern char **environ;
 
 /* TYPE DEFS */
 typedef char *string;

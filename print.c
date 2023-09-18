@@ -29,6 +29,7 @@ int printChar(char c)
 int printString(char *str)
 {
 	int i = 0, count = 0;
+
 	while (str[i])
 	{
 		count += printChar(str[i++]);
@@ -51,8 +52,8 @@ int printString(char *str)
  */
 void print_environment(void)
 {
-	extern char **environ;
 	int i;
+
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		printString(environ[i]);
