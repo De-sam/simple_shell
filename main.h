@@ -34,6 +34,8 @@ void unset_env_variable(const char *variable);
 void change_directory(const char *new_dir);
 int cmd_set_unset_env(char **argv);
 int cmd_change_directory(char **argv);
+void cmd_exit(char *command, char **argv);
+string loc_perser(string path_copy, string command);
 
 /* MACROS */
 #define TRUE 1

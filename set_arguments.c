@@ -17,7 +17,6 @@ char **set_args(char *command)
 		free(command);
 		return (NULL);
 	}
-
 	while (token != NULL)
 	{
 		num_token++;
@@ -33,8 +32,8 @@ char **set_args(char *command)
 		token = tokenize(NULL, delim);
 	}
 	argv[i] = NULL;
-
 	free(command_copy);
 	free(command);
+	
 	return (argv);
 }

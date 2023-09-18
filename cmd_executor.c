@@ -8,18 +8,7 @@ void execmd(char **argv)
 	if (argv)
 	{
 		command = argv[0];
-		if (strcmp(command, "exit") == 0)
-		{
-			int status = 0;
-			if (argv[1] != NULL)
-			{
-				status = atoi(argv[1]);
-			}
-
-			free(command);
-			free(argv);
-			exit(status);
-		}
+		cmd_exit(command, argv);
 		actual_command = get_location(command);
 
 		if (actual_command == NULL)
@@ -45,9 +34,7 @@ void execmd(char **argv)
 				free(actual_command);
 			}
 			else
-			{
 				perror("fork error");
-			}
 		}
 	}
 }
