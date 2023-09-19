@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
- * str_cmp - Compare two strings in alphabetical order
+ * _str_cmp - Compare two strings in alphabetical order
  * @string1: The first string as an argument to compare
  * @string2: The second string as an argument to compare
  *
@@ -12,9 +13,7 @@
  *
  * Return: The comparison result as described above.
  */
-
-
-int str_cmp(const char *string1, const char *string2)
+int _str_cmp(const char *string1, const char *string2)
 {
 	while (*string1 != '\0' && *string2 != '\0')
 	{
@@ -43,16 +42,14 @@ int str_cmp(const char *string1, const char *string2)
 		return (1);
 	}
 }
-#include "main.h"
 
 /**
- *str_cat - a function that concatenates two strings
+ *_str_cat - a function that concatenates two strings
  *@dest: String that will be appended
  *@src: String to be concatenated
  * Return: returns poiner to @dest
  */
-
-char *str_cat(char *dest, char *src)
+char *_str_cat(char *dest, char *src)
 {
 
 	int index = 0, dest_length = 0;
@@ -65,15 +62,13 @@ char *str_cat(char *dest, char *src)
 
 	return (dest);
 }
-#include "main.h"
 
 /**
- *str_len - returns the length of a string
+ *_str_len - returns the length of a string
  *@s: is the parameter
  *Return: the string length
  */
-
-size_t str_len(const char *s)
+size_t _str_len(const char *s)
 {
 	size_t length = 0;
 

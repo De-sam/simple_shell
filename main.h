@@ -35,9 +35,9 @@ int cmd_set_unset_env(char **argv);
 int cmd_change_directory(char **argv);
 void cmd_exit(char *command, char **argv);
 string loc_perser(string path_copy, string command);
-int str_cmp(const char *string1, const char *string2);
-char *str_cat(char *dest, char *src);
-size_t str_len(const char *s);
+int _str_cmp(const char *string1, const char *string2);
+char *_str_cat(char *dest, char *src);
+size_t _str_len(const char *s);
 
 /* MACROS */
 #define TRUE 1

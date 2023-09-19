@@ -2,9 +2,8 @@
 
 /**
  * main - Entry point for a custom shell program
- * @argc: The number of command-line arguments (unused)
- * @argv: An array of strings representing the command-line arguments
  *
+ * Description:
  * This function serves as the entry point for a custom shell program.
  * It initializes variables, continuously prompts the user for input,
  * parses and executes commands, and handles various built-in shell

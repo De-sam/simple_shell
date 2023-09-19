@@ -19,6 +19,7 @@ void unset_env_variable(const char *variable)
 void change_directory(const char *new_dir)
 {
 	char old_dir[PATH_MAX];
+
 	if (getcwd(old_dir, sizeof(old_dir)) == NULL)
 	{
 		perror("getcwd");
@@ -35,6 +36,6 @@ void change_directory(const char *new_dir)
 	{
 		perror("setenv");
 		return;
-	}else
-		setenv("OLDPWD", old_dir, 1);
+	}
+	setenv("OLDPWD", old_dir, 1);
 }

@@ -2,20 +2,20 @@
 
 char *tokenize(char *str, const char *delim)
 {
-	static char *lastToken = NULL;
+	static char *lastToken;
 	char *token;
 
 	if (str != NULL)
 		lastToken = str;
 
 	if (lastToken == NULL || *lastToken == '\0')
-		return NULL;
+		return (NULL);
 
 	while (*lastToken != '\0' && strchr(delim, *lastToken) != NULL)
 		lastToken++;
 
 	if (*lastToken == '\0')
-		return NULL;
+		return (NULL);
 
 	token = lastToken;
 	while (*lastToken != '\0' && strchr(delim, *lastToken) == NULL)
@@ -27,5 +27,5 @@ char *tokenize(char *str, const char *delim)
 		lastToken++;
 	}
 
-	return token;
+	return (token);
 }

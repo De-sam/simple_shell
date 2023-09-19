@@ -9,8 +9,7 @@ char **set_args(char *command)
 
 	command_copy = strdup(command);
 	token = tokenize(command, delim);
-	
-	if (strcmp(token, "env") == 0)
+	if (_str_cmp(token, "env") == 0)
 	{
 		print_environment();
 		free(command_copy);
@@ -27,13 +26,12 @@ char **set_args(char *command)
 	token = tokenize(command_copy, delim);
 	for (i = 0; token != NULL; i++)
 	{
-		argv[i] = malloc(strlen(token) + 1);
+		argv[i] = malloc(_str_len(token) + 1);
 		strcpy(argv[i], token);
 		token = tokenize(NULL, delim);
 	}
 	argv[i] = NULL;
 	free(command_copy);
 	free(command);
-	
 	return (argv);
 }

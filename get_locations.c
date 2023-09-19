@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
- * get_location - Takes in a the command
+ * get_location - Get the location of a command in PATH
  * @command: command passed
  * Return: Returns a string
 */
@@ -37,18 +38,18 @@ string loc_perser(string path_copy, string command)
 	int command_len, directory_len;
 	struct stat buffer;
 
-	command_len = strlen(command);
-	path_token = strtok(path_copy, ":");
+	command_len = _str_len(command);
+	path_token = tokenize(path_copy, ":");
 
 	while (path_token != NULL)
 	{
-		directory_len = strlen(path_token);
+		directory_len = _str_len(path_token);
 		file_path = malloc(command_len + directory_len + 2);
 
-		str_cpy(file_path, path_token);
-		str_cat(file_path, "/");
-		str_cat(file_path, command);
-		str_cat(file_path, "\0");
+		strcpy(file_path, path_token);
+		strcat(file_path, "/");
+		strcat(file_path, command);
+		strcat(file_path, "\0");
 
 		if (stat(file_path, &buffer) == 0)
 		{
@@ -58,7 +59,7 @@ string loc_perser(string path_copy, string command)
 		else
 		{
 			free(file_path);
-			path_token = strtok(NULL, ":");
+			path_token = tokenize(NULL, ":");
 		}
 	}
 
