@@ -7,10 +7,15 @@
 */
 int cmd_set_unset_env(char **argv)
 {
+	int i;
+
 	if (_str_cmp(argv[0], "setenv") == 0)
 	{
 		if (argv[1] != NULL && argv[2] != NULL && argv[3] == NULL)
 			set_env_variable(argv[1], argv[2]);
+		for (i = 0; argv[i] != NULL; i++)
+			free(argv[i]);
+		free(argv);
 
 		return (1);
 	}
@@ -18,6 +23,9 @@ int cmd_set_unset_env(char **argv)
 	{
 		if (argv[1] != NULL && argv[2] == NULL)
 			unsetenv(argv[1]);
+		for (i = 0; argv[i] != NULL; i++)
+			free(argv[i]);
+		free(argv);
 		return (1);
 	}
 

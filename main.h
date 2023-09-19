@@ -23,7 +23,7 @@ int printString(char *str);
 void execmd(char **argv);
 char *get_location(char *command);
 string get_location_new(string command);
-ssize_t _getline(char **command, size_t *len, FILE *stream);
+/*ssize_t _getline(char **lineptr, size_t *n, int fd);*/
 char *tokenize(char *str, const char *delim);
 int prompt(char *prog_name, char **command);
 void print_environment(void);
@@ -43,6 +43,5 @@ size_t _str_len(const char *s);
 #define TRUE 1
 #define FALSE 0
 #define PATH_MAX 4096
-
 
 #endif
