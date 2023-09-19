@@ -2,13 +2,15 @@
 
 int main(int argc, char **argv)
 {
-	string command = NULL;
+	string command = NULL, prog_name = NULL;
 	int i;
+
 	(void)argc;
+	prog_name = argv[0];
 
 	while (TRUE)
 	{
-		if (!prompt(&command))
+		if (!prompt(prog_name, &command))
 			continue;
 		argv = set_args(command);
 		if (argv)
