@@ -1,5 +1,21 @@
 #include "main.h"
 
+/**
+ * main - Entry point for a custom shell program
+ * @argc: The number of command-line arguments (unused)
+ * @argv: An array of strings representing the command-line arguments
+ *
+ * This function serves as the entry point for a custom shell program.
+ * It initializes variables, continuously prompts the user for input,
+ * parses and executes commands, and handles various built-in shell
+ * functionalities such as environment variable manipulation and
+ * changing the current working directory.
+ *
+ * @argc: The number of command-line arguments (unused).
+ * @argv: An array of strings containing the program name and arguments.
+ *
+ * Return: Always returns 0 to indicate successful execution.
+ */
 int main(int argc, char **argv)
 {
 	string command = NULL, prog_name = NULL;

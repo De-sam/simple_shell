@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * get_location - Takes in a the command
+ * @command: command passed
+ * Return: Returns a string
+*/
 string get_location(string command)
 {
 	string path, path_copy, file_path;
@@ -13,7 +17,7 @@ string get_location(string command)
 		file_path = loc_perser(path_copy, command);
 		if (file_path != NULL)
 			return (file_path);
-		
+
 		free(path_copy);
 		if (stat(command, &buffer) == 0)
 		{
@@ -41,10 +45,10 @@ string loc_perser(string path_copy, string command)
 		directory_len = strlen(path_token);
 		file_path = malloc(command_len + directory_len + 2);
 
-		strcpy(file_path, path_token);
-		strcat(file_path, "/");
-		strcat(file_path, command);
-		strcat(file_path, "\0");
+		str_cpy(file_path, path_token);
+		str_cat(file_path, "/");
+		str_cat(file_path, command);
+		str_cat(file_path, "\0");
 
 		if (stat(file_path, &buffer) == 0)
 		{

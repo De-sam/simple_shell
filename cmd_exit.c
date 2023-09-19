@@ -1,10 +1,15 @@
 #include "main.h"
-
+/**
+ * cmd_exit - Takes in the command and argv arguments
+ * @command: Command passed into the function
+ * @argv: A array of argument vectors
+*/
 void cmd_exit(char *command, char **argv)
 {
-	if (strcmp(command, "exit") == 0)
+	if (str_cmp(command, "exit") == 0)
 	{
 		int status = 0;
+
 		if (argv[1] != NULL)
 		{
 			status = atoi(argv[1]);

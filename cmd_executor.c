@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * execmd - Takes in a pointer to a pointer argv
+ * @argv: An array of vectors
+ * Return: Nothing
+*/
 void execmd(char **argv)
 {
 	string command = NULL, actual_command = NULL;

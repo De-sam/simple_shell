@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * cd_home - takes in a pointer to a pointer of char argv
+ * @argv: array of vectors
+ * Return: This function doesn't return
+*/
 
 void cd_home(char **argv)
 {
@@ -14,20 +19,26 @@ void cd_home(char **argv)
 	}
 }
 
+/**
+ * cmd_change_directory - This function takes in a pointer to a pointer argv
+ * @argv:Another array of vectors
+ * Return:Returns an int value
+*/
 int cmd_change_directory(char **argv)
 {
 	int i;
 
-	if (strcmp(argv[0], "cd") == 0)
+	if (str_cmp(argv[0], "cd") == 0)
 	{
-		if (argv[1] == NULL || strcmp(argv[1], "~") == 0)
+		if (argv[1] == NULL || str_cmp(argv[1], "~") == 0)
 		{
 			cd_home(argv);
 			return (1);
 		}
-		else if (strcmp(argv[1], "-") == 0)
+		else if (str_cmp(argv[1], "-") == 0)
 		{
 			const char *prev_dir = getenv("OLDPWD");
+
 			if (prev_dir != NULL)
 			{
 				change_directory(prev_dir);
