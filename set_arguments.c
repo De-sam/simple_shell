@@ -1,5 +1,17 @@
 #include "main.h"
-
+/**
+ * set_args - Parse a command string into an array of arguments.
+ *
+ * This function takes a command string and tokenizes it into an array
+ * of arguments, splitting the string using space and newline characters
+ * as delimiters. It also handles the special case where the command is
+ * "env" by printing the environment and returning NULL.
+ *
+ * @command: The command string to parse.
+ *
+ * Return: An array of strings (arguments) terminated by a NULL pointer,
+ *         or NULL if the command is "env" (environment print).
+ */
 char **set_args(char *command)
 {
 	string command_copy = NULL, token = NULL;

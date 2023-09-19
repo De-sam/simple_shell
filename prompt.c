@@ -2,7 +2,7 @@
 
 /**
  * prompt - Display a command prompt and read user input
- * 
+ *
  * Description:
  * This function displays a command prompt when input is coming from a terminal
  * and reads the user's input from the standard input also storing the user's
@@ -12,7 +12,6 @@
  *
  * @prog_name: The name of the program to include in the prompt.
  * @command: A pointer to a string where the user's input will be stored.
- *
  * Return: 1 if user input is valid and not empty, 0 otherwise.
  */
 int prompt(char *prog_name, char **command)
