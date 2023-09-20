@@ -20,6 +20,11 @@ void execmd(char *prog_name, char **argv)
 		if (actual_command == NULL)
 		{
 			free(actual_command);
+			if (!isatty(0))
+			{
+				printf("%s: 1: %s: not found", prog_name, command);
+				exit(EXIT_FAILURE);
+			}
 			perror(prog_name);
 		}
 		else
@@ -37,7 +42,6 @@ void execmd(char *prog_name, char **argv)
 			else if (child_pid > 0)
 			{
 				wait(NULL);
-				free(actual_command);
 			}
 			else
 				perror("fork error");

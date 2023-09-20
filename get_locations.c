@@ -18,13 +18,10 @@ string get_location(string command)
 		file_path = loc_perser(path_copy, command);
 		if (file_path != NULL)
 			return (file_path);
-
+		free(file_path);
 		free(path_copy);
 		if (stat(command, &buffer) == 0)
-		{
-			free(file_path);
 			return (command);
-		}
 
 		return (NULL);
 	}

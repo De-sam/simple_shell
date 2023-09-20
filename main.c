@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
 	while (TRUE)
 	{
-		if (!prompt(prog_name, &command))
+		if (!prompt(&command))
 			continue;
 		argv = set_args(command);
 		if (argv)

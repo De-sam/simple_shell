@@ -10,16 +10,14 @@
  * adjustments, such as removing trailing newline characters and handling
  * empty input.
  *
- * @prog_name: The name of the program to include in the prompt.
  * @command: A pointer to a string where the user's input will be stored.
  * Return: 1 if user input is valid and not empty, 0 otherwise.
  */
-int prompt(char *prog_name, char **command)
+int prompt(char **command)
 {
 	ssize_t n = 0;
 	size_t len = 0;
-	/*size_t input_length = 0;*/
-	struct stat buffer;
+	size_t input_length = 0;
 
 	if (isatty(0))
 		printf("$ ");
@@ -29,13 +27,12 @@ int prompt(char *prog_name, char **command)
 		free(*command);
 		exit(EXIT_SUCCESS);
 	}
-	/*
+
 	input_length = _str_len(*command);
 	if (input_length > 0 && (*command)[input_length - 1] == '\n')
 	{
 		(*command)[input_length - 1] = '\0';
 	}
-	*/
 
 	if (_str_cmp(*command, "") == 0)
 	{
@@ -43,13 +40,5 @@ int prompt(char *prog_name, char **command)
 		return (0);
 	}
 
-	if (!isatty(0))
-	{
-		if (stat(*command, &buffer) == -1)
-		{
-			printf("%s: 1: %s: not found", prog_name, *command);
-			exit(EXIT_FAILURE);
-		}
-	}
 	return (1);
 }
