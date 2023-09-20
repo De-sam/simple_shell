@@ -1,6 +1,7 @@
 Authors
 List of contributors to this project:
 
-[Your Name]
-Email: [Your Email Address]
-GitHub: [Your GitHub Profile URL]
+ Odunaro samson <samsoncoded@gmail.com>
+ Adeyiga adams <>
+
+

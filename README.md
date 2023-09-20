@@ -32,48 +32,5 @@ To get started with this shell, follow these steps:
 1. Clone the repository: `git clone https://github.com/De-sam/simple_shell`
 2. 
 
-## Usage
-
-[Provide usage examples and instructions here. Describe how users can run your shell and any command-line arguments or options they can use.]
-
-## Commands
-
-[Document the available commands that your shell supports. Provide descriptions of each command and how to use them.]
-
-### Command 1
-
-```
-[Command syntax and usage example]
-```
-
-### Command 2
-
-```
-[Command syntax and usage example]
-```
-
-## Contributing
-
-Contributions are welcome! If you want to contribute to this project, follow these steps:
-
-1. Fork the project.
-2. Create a new branch for your feature: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to your branch: `git push origin feature-name`
-5. Create a pull request.
-
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-[You can thank anyone who helped you or mention any resources or libraries you used]
-
-## Contact
-
-If you have any questions or feedback, feel free to contact [your name] at [your email address].
-
----
 
 
