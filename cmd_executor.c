@@ -2,6 +2,7 @@
 
 /**
  * execmd - Takes in a pointer to a pointer argv
+ * @prog_name: Name of the program
  * @argv: An array of vectors
  * Return: Nothing
 */
