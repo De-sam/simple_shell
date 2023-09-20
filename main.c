@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 				continue;
 			if (cmd_change_directory(argv))
 				continue;
-			execmd(argv);
+			execmd(prog_name, argv);
 			if (argv != NULL)
 			{
 				for (i = 0; argv[i] != NULL; i++)

@@ -18,13 +18,10 @@ char *tokenize(char *str, const char *delim)
 
 	if (str != NULL)
 		lastToken = str;
-
 	if (lastToken == NULL || *lastToken == '\0')
 		return (NULL);
-
 	while (*lastToken != '\0' && strchr(delim, *lastToken) != NULL)
 		lastToken++;
-
 	if (*lastToken == '\0')
 		return (NULL);
 

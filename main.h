@@ -20,7 +20,7 @@ typedef char *string;
 /*FUNCTION PROTOTYPES*/
 int printChar(char c);
 int printString(char *str);
-void execmd(char **argv);
+void execmd(char *prog_name, char **argv);
 char *get_location(char *command);
 string get_location_new(string command);
 /*ssize_t _getline(char **lineptr, size_t *n, int fd);*/

@@ -5,7 +5,7 @@
  * @argv: An array of vectors
  * Return: Nothing
 */
-void execmd(char **argv)
+void execmd(char *prog_name, char **argv)
 {
 	string command = NULL, actual_command = NULL;
 	pid_t child_pid;
@@ -19,7 +19,7 @@ void execmd(char **argv)
 		if (actual_command == NULL)
 		{
 			free(actual_command);
-			perror("Error");
+			perror(prog_name);
 		}
 		else
 		{
@@ -27,7 +27,7 @@ void execmd(char **argv)
 			if (child_pid == 0)
 			{
 				execve(actual_command, argv, NULL);
-				perror("Error");
+				perror(prog_name);
 				free(actual_command);
 				free(command);
 				free(argv);
