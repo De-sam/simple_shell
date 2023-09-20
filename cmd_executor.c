@@ -27,7 +27,7 @@ void execmd(char *prog_name, char **argv)
 			child_pid = fork();
 			if (child_pid == 0)
 			{
-				execve(actual_command, argv, NULL);
+				execve(actual_command, argv, environ);
 				perror(prog_name);
 				free(actual_command);
 				free(command);
