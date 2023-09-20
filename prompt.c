@@ -18,7 +18,7 @@ int prompt(char *prog_name, char **command)
 {
 	ssize_t n = 0;
 	size_t len = 0;
-	size_t input_length = 0;
+	/*size_t input_length = 0;*/
 	struct stat buffer;
 
 	if (isatty(0))
@@ -29,12 +29,13 @@ int prompt(char *prog_name, char **command)
 		free(*command);
 		exit(EXIT_SUCCESS);
 	}
-
+	/*
 	input_length = _str_len(*command);
 	if (input_length > 0 && (*command)[input_length - 1] == '\n')
 	{
 		(*command)[input_length - 1] = '\0';
 	}
+	*/
 
 	if (_str_cmp(*command, "") == 0)
 	{
